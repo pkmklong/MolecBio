@@ -17,19 +17,19 @@ function parse_commandline()
             help = "The name of your target transcript"
             required = true
     end
-
     return parse_args(s)
 end
 
+
 function main()
-    parsed_args = parse_commandline()
+    args = parse_commandline()
     println("Parsed args:")
-    for (arg,val) in parsed_args
+    for (arg,val) in args
         println("  $arg  =>  $val")
     end
-    raw_table = molecbio.load_table()
-    ddct_table = molecbio.calculate_ddct(raw_table)
-    output_path = molecbio.make_output_path()
+    raw_table = molecbio.load_table(args.file_path)
+    ddct_table = molecbio.calculate_ddct(raw_table, args.control, args.target, args.normalizer)
+    output_path = molecbio.make_output_path(args.file_path)
     molecbio.save_table_to_csv(ddct_table, output_path)
 end
 
