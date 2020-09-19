@@ -4,17 +4,22 @@ function parse_commandline()
     s = ArgParseSettings()
 
     @add_arg_table! s begin
-        "--file_path"
+        "--file_path", "-f"
             help = "The path to raw ct data (csv) for relative RNA quantification"
-        "--control", "-o"
+            arg_type = String
+            required = true
+        "--control", "-c"
             help = "The name of your control group"
-            arg_type = Int
-            default = 0
-        "--normalizer"
+            arg_type = String
+            default = "control"
+            required = true
+        "--normalizer", "-n"
             help = "The name of your normalizing reference transcript"
-            action = :store_true
-        "--target"
+            arg_type = String
+            required = true
+        "--target", "-t"
             help = "The name of your target transcript"
+            arg_type = String
             required = true
     end
     return parse_args(s)
