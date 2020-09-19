@@ -4,34 +4,44 @@ __precompile__()
 module MolecBio
 using DataFrames
 using CSV
+using Statistics
 
 molecbio = MolecBio
 export molecbio
 
 
 
-df = CSV.File(file_path) |> DataFrame
-
-
-function make_output_path()
+function make_output_path(file_path:: String)
+    
+    ind = findlast(isequal('.'), file_path) -1 
+    output_path = string(file_path[1:ind], "_processed")
+    return output_path
 end
 
-function load_table(file_path:: string)
+
+function load_table(file_path:: String)
     df = CSV.File(file_path) |> DataFrame
     return df
 end
 
 
-function calculate_ddct(df)
+function calculate_ddct(df:: DataFrame, 
+        control:: String,
+        target:: String,
+        normalizer:: String)  
     
-        df[Symbol("delta_ct"] = df[:target] - df[:normalizer]
+    df[Symbol("delta_ct")] = df[Symbol(target)] - df[Symbol(normalizer)]
+    
+    avg_delta_ct_control = mean(df[df[:group] .== control,:delta_ct])
+    df[Symbol("delta_delta_ct")] = df.delta_ct .- avg_delta_ct_control   
+    
+    f = (x) -> 2^(-x)
+    df[Symbol("fold_change")] = f.(-df.delta_delta_ct)
+    return df
+end
 
-        avg_delta_ct_control = df[df[:group .== :control],:delta_ct.mean()
 
-        df["delta_delta_ct"] = df.delta_ct - avg_delta_ct_control
-
-        df["fold_change"] = 2 ** (-df.delta_delta_ct)
-    end
-
-function save_table()
-    end
+function save_table(file_path:: String)
+    output_path = make_output_path(file_path)
+    CSV.write(string(output_path, ".csv"), df)
+end
