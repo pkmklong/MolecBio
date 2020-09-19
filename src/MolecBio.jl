@@ -1,6 +1,5 @@
 __precompile__()
 
-
 module MolecBio
 using DataFrames
 using CSV
@@ -8,7 +7,6 @@ using Statistics
 
 molecbio = MolecBio
 export molecbio
-
 
 
 function make_output_path(file_path:: String)
