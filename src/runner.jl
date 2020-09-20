@@ -1,4 +1,5 @@
 using ArgParse
+using molecbio
 
 function parse_commandline()
     s = ArgParseSettings()
