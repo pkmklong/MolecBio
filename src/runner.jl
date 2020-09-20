@@ -49,7 +49,7 @@ function main()
     @info "Saving output table to " ddct_table_path
     MolecBio.save_table(ddct_table, ddct_table_path)
     
-    ddct_figure_path = MolecBio.make_output_path(args["file_path"], ".csv")
+    ddct_figure_path = MolecBio.make_output_path(args["file_path"], ".svg")
     @info "Saving output figure to " ddct_figure_path
     MolecBio.plot_fold_change(ddct_table, ddct_figure_path)
 end
