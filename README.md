@@ -27,7 +27,7 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-</b>Demo</b>
+<b>Demo</b>
 ```julia
 julia runner.jl -f data/demo_data.csv -c "control" -t "egf1r" -n "rpl19" 
 ```
