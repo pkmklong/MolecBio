@@ -28,6 +28,14 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
+<b>Input data dictionary</b>
+```
+{column:                            type      description}
+"group":                            String    Names of comparison groups
+user defined target column:         Float64   ct values of target transcript
+user defined normalizing column:    Float64   ct values of normalizing reference transcript
+```
+
 <b>Fold change</b>
 
 <img src="https://github.com/pkmklong/molecbio/blob/master/images/ddct.svg" height="250"  class="center" title="delta delta CT">
@@ -55,6 +63,8 @@ Parsed args:
 │    │ 4   │ control │ 25.4    │ 17.7    │ -7.7     │ 0.8665         │ 1.82323     │
 └    │ 5   │ control │ 25.45   │ 17.2    │ -8.25    │ 0.3165         │ 1.24531     │
 ┌ Info: Saving output table to 
-└   output_path = "data/demo_data_processed.csv"
+└   ddct_table_path = "data/demo_data_processed.csv"
+┌ Info: Saving output figure to 
+└   ddct_figure_path = "data/demo_data_processed.svg"
 
 ```
