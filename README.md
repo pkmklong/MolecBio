@@ -29,5 +29,5 @@ optional arguments:
 
 <b>Demo</b>
 ```julia
-julia runner.jl -f data/demo_data.csv -c "control" -t "egf1r" -n "rpl19" 
+julia src/runner.jl -f data/demo_data.csv -c "control" -t "egf1r" -n "rpl19" 
 ```
