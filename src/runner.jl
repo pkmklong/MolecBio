@@ -36,13 +36,13 @@ function main()
     end
     @info "Loading CT values table" args["file_path"]
     raw_table = MolecBio.load_table(args["file_path"])
-    @info "Computing fold change with delta delta ct" firest(ddct_table, 5)
     ddct_table = MolecBio.calculate_ddct(
         raw_table,
         args["control"], 
         args["normalizer"],
         args["target"]
     )
+    @info "Computing fold change with delta delta ct" firest(ddct_table, 5)
     output_path = MolecBio.make_output_path(args["file_path"])
     @info "Saving output table to " output_path
     MolecBio.save_table(ddct_table, output_path)
