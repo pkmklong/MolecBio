@@ -44,8 +44,20 @@ function save_table(df:: DataFrame, output_path:: String)
     CSV.write(output_path, df)
 end
 
-function plot_fold_change(df:: DataFrame, output_path:: String)  
-    p = plot(df,  x="group", y="fold_change", Geom.boxplot)
+function plot_fold_change(df:: DataFrame, 
+        normalizer:: String, 
+        output_path:: String)  
+    expression = plot(
+        df, x="group", y="fold_change", 
+        Geom.boxplot,
+        Guide.title("Fold Change in Target Expression")
+    )
+    normalizer = plot(
+        df, x="group", y=normalizer, 
+        Geom.boxplot,
+        Guide.title("Raw CT $normalizer")
+    )
+    p = hstack(expression,normalizer)
     img = SVG(output_path, 5inch, 4inch)
     draw(img, p)
 end 
