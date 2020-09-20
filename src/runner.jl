@@ -40,8 +40,7 @@ function main()
         args["normalizer"],
         args["target"]
     )
-    output_path = MolecBio.make_output_path(args["file_path"])
-    MolecBio.save_table(ddct_table, output_path)
+    MolecBio.save_table(ddct_table, args["file_path"])
 end
 
 main()
