@@ -4,6 +4,7 @@ module MolecBio
 using DataFrames
 using CSV
 using Statistics
+using Gadfly
 
 molecbio = MolecBio
 export molecbio
