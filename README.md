@@ -5,7 +5,7 @@ WIP: Julia utility for relative gene expression
 ```julia
 using Pkg
 
-pkg"add https://github.com/pkmklong/MolecBio.jl"
+pkg"add https://github.com/pkmklong/MolecBio.git"
 ```
 
 <b>Entry point</b>
