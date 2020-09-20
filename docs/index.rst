@@ -86,9 +86,14 @@ Demo::
     Currently assumes perfect amplification efficiency and unpaired samples.
     
     
+.. include:: isogrk1.txt
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
+   license
 
 
 
