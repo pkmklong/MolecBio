@@ -43,7 +43,7 @@ Input data dictionary::
       user defined normalizing column:    Float64   ct values of normalizing reference transcript
 
 
-Fold change::
+Fold change:
 
 .. image:: ../images/ddct.svg
   :width: 550
