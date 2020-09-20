@@ -11,7 +11,7 @@ pkg"add https://github.com/pkmklong/MolecBio.git"
 
 <b>Entry point</b>
 ```julia
-julia runner.jl --h
+$ julia runner.jl --h
 usage: runner.jl -f FILE_PATH -c CONTROL -t TARGET -n NORMALIZER [-h]
 
 optional arguments:
