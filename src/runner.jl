@@ -14,12 +14,12 @@ function parse_commandline()
             arg_type = String
             default = "control"
             required = true
-        "--normalizer", "-n"
-            help = "The name of your normalizing reference transcript"
-            arg_type = String
-            required = true
         "--target", "-t"
             help = "The name of your target transcript"
+            arg_type = String
+            required = true
+        "--normalizer", "-n"
+            help = "The name of your normalizing reference transcript"
             arg_type = String
             required = true
     end
