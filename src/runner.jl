@@ -1,5 +1,6 @@
 using ArgParse
 using MolecBio
+using DataFrames
 
 function parse_commandline()
     s = ArgParseSettings()
@@ -33,14 +34,18 @@ function main()
     for (arg,val) in args
         println("  $arg  =>  $val")
     end
+    @info "Loading CT values table" args["file_path"]
     raw_table = MolecBio.load_table(args["file_path"])
+    @info "Computing fold change with delta delta ct" firest(ddct_table, 5)
     ddct_table = MolecBio.calculate_ddct(
         raw_table,
         args["control"], 
         args["normalizer"],
         args["target"]
     )
-    MolecBio.save_table(ddct_table, args["file_path"])
+    output_path = MolecBio.make_output_path(args["file_path"])
+    @info "Saving output table to "
+    MolecBio.save_table(ddct_table, output_path)
 end
 
 main()
