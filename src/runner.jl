@@ -34,7 +34,7 @@ function main()
     for (arg,val) in args
         println("  $arg  =>  $val")
     end
-    @info "Loading CT values table" $(args["file_path"])
+    @info "Loading CT values table" "$(args["file_path"])"
     raw_table = MolecBio.load_table(args["file_path"])
     ddct_table = MolecBio.calculate_ddct(
         raw_table,
@@ -42,9 +42,9 @@ function main()
         args["normalizer"],
         args["target"]
     )
-    @info "Computing fold change with delta delta ct" $(first(ddct_table, 5))
+    @info "Computing fold change with delta delta ct" "$(first(ddct_table, 5))"
     output_path = MolecBio.make_output_path(args["file_path"])
-    @info "Saving output table to " $(String(output_path, ".csv"))
+    @info "Saving output table to " "$(String(output_path, ".csv"))"
     MolecBio.save_table(ddct_table, output_path)
 end
 
