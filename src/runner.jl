@@ -42,7 +42,7 @@ function main()
         args["normalizer"],
         args["target"]
     )
-    @info "Computing fold change with delta delta ct" firest(ddct_table, 5)
+    @info "Computing fold change with delta delta ct" first(ddct_table, 5)
     output_path = MolecBio.make_output_path(args["file_path"])
     @info "Saving output table to " output_path
     MolecBio.save_table(ddct_table, output_path)
