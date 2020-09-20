@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MolecBio documentation
+MolecBio.jl documentation
 =====================================
 A simple Julia utility to automate relative quantification of mRNA from thermocycler cycle threshold (ct) data. Takes as input raw ct values for target and reference genes from experiment and control conditions and returns as output the fold changes in gene expression using the |Dgr| |Dgr| ct method. 
 
