@@ -30,7 +30,7 @@ optional arguments:
 
 <b>Fold change</b>
 
-<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.svg" height="250"  class="center" title="delta delta CT">
+<img src="https://github.com/pkmklong/molecbio/blob/master/images/ddct.svg" height="250"  class="center" title="delta delta CT">
 
 
 <b>Demo</b>
