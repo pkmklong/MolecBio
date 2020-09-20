@@ -30,19 +30,26 @@ optional arguments:
 
 <b>Demo</b>
 ```julia
-julia src/runner.jl -f data/demo_data.csv -c "control" -t "egf1r" -n "rpl19" 
+$ julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
+Parsed args:
+  normalizer  =>  rpl19
+  target  =>  egf1r
+  control  =>  control
+  file_path  =>  data/demo_data.csv
+┌ Info: Loading CT values table
+└   args["file_path"] = "data/demo_data.csv"
+┌ Info: Computing fold change with delta delta ct
+│   first(ddct_table, 5) =
+│    5×6 DataFrame
+│    │ Row │ group   │ egf1r   │ rpl19   │ delta_ct │ delta_delta_ct │ fold_change │
+│    │     │ String  │ Float64 │ Float64 │ Float64  │ Float64        │ Float64     │
+│    ├─────┼─────────┼─────────┼─────────┼──────────┼────────────────┼─────────────┤
+│    │ 1   │ control │ 25.6    │ 17.5    │ -8.1     │ 0.4665         │ 1.38175     │
+│    │ 2   │ control │ 25.8    │ 16.9    │ -8.9     │ -0.3335        │ 0.793609    │
+│    │ 3   │ control │ 26.0    │ 17.4    │ -8.6     │ -0.0335        │ 0.977047    │
+│    │ 4   │ control │ 25.4    │ 17.7    │ -7.7     │ 0.8665         │ 1.82323     │
+└    │ 5   │ control │ 25.45   │ 17.2    │ -8.25    │ 0.3165         │ 1.24531     │
+┌ Info: Saving output table to 
+└   output_path = "data/demo_data_processed"
 
-│ Row │ group   │ egf1r   │ rpl19   │ delta_ct │ delta_delta_ct │ fold_change │
-│     │ String  │ Float64 │ Float64 │ Float64  │ Float64        │ Float64     │
-├─────┼─────────┼─────────┼─────────┼──────────┼────────────────┼─────────────┤
-│ 1   │ control │ 25.6    │ 17.5    │ 8.1      │ -0.4665        │ 0.723718    │
-│ 2   │ control │ 25.8    │ 16.9    │ 8.9      │ 0.3335         │ 1.26007     │
-│ 3   │ control │ 26.0    │ 17.4    │ 8.6      │ 0.0335         │ 1.02349     │
-│ 4   │ control │ 25.4    │ 17.7    │ 7.7      │ -0.8665        │ 0.548476    │
-│ 5   │ control │ 25.45   │ 17.2    │ 8.25     │ -0.3165        │ 0.803016    │
-│ 6   │ control │ 25.959  │ 17.2    │ 8.759    │ 0.1925         │ 1.14274     │
-│ 7   │ control │ 25.908  │ 17.7    │ 8.208    │ -0.3585        │ 0.779975    │
-│ 8   │ control │ 26.112  │ 17.5    │ 8.612    │ 0.0455         │ 1.03204     │
-│ 9   │ control │ 26.316  │ 16.9    │ 9.416    │ 0.8495         │ 1.80188     │
-│ 10  │ control │ 26.52   │ 17.4    │ 9.12     │ 0.5535         │ 1.46764     │
 ```
