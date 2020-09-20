@@ -1,0 +1,4 @@
+name = "MolecBio"
+uuid = "da055a03-5fd4-437f-bd66-39734bd9e26b"
+authors = ["Patrick Long <patrick.long@gmail.com>"]
+version = "0.1.0"
