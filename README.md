@@ -28,6 +28,11 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
+<b>Fold change</b>
+
+<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.svg" height="250"  class="center" title="delta delta CT">
+
+
 <b>Demo</b>
 ```julia
 $ julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
