@@ -51,7 +51,7 @@ function main()
     
     ddct_figure_path = MolecBio.make_output_path(args["file_path"], ".svg")
     @info "Saving output figure to " ddct_figure_path
-    MolecBio.plot_fold_change(ddct_table, ddct_figure_path)
+    MolecBio.plot_fold_change(ddct_table, args["normalizer"], ddct_figure_path)
 end
 
 main()
