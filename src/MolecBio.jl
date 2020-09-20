@@ -9,10 +9,10 @@ molecbio = MolecBio
 export molecbio
 
 
-function make_output_path(file_path:: String)
+function make_output_path(file_path:: String, file_type:: String)
     
     ind = findlast(isequal('.'), file_path) -1 
-    output_path = string(file_path[1:ind], "_processed")
+    output_path = string(string(file_path[1:ind], "_processed"), file_type)
     return output_path
 end
 
@@ -40,7 +40,7 @@ end
 
 
 function save_table(df:: DataFrame, output_path:: String)
-    CSV.write(string(output_path, ".csv"), df)
+    CSV.write(output_path, df)
 end
 
 
