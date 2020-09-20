@@ -39,7 +39,7 @@ function calculate_ddct(df:: DataFrame,
 end
 
 
-function save_table(file_path:: String)
+function save_table(df:: DataFrame, file_path:: String)
     output_path = make_output_path(file_path)
     CSV.write(string(output_path, ".csv"), df)
 end
