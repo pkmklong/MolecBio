@@ -68,3 +68,6 @@ Parsed args:
 └   ddct_figure_path = "data/demo_data_processed.svg"
 
 ```
+<b>Visuals</b>
+
+<img src="https://github.com/pkmklong/molecbio/blob/master/images/demo_data_processed.svg" height="400"  class="center" title="Demo visualization">
