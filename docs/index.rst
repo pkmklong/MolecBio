@@ -77,7 +77,7 @@ Demo::
       └   ddct_figure_path = "data/demo_data_processed.svg"
 
 
-.. image:: ../images/demo_data.svg
+.. image:: ../images/demo_data_processed.svg
   :width: 500
   :alt: Demo visualization 
   
