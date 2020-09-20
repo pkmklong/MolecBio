@@ -34,7 +34,7 @@ function main()
     for (arg,val) in args
         println("  $arg  =>  $val")
     end
-    @info "Loading CT values table" args["file_path"])
+    @info "Loading CT values table" args["file_path"]
     raw_table = MolecBio.load_table(args["file_path"])
     ddct_table = MolecBio.calculate_ddct(
         raw_table,
