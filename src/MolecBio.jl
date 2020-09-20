@@ -12,7 +12,7 @@ export molecbio
 function make_output_path(file_path:: String, file_type:: String)
     
     ind = findlast(isequal('.'), file_path) -1 
-    output_path = string(file_path[1:ind], "_processed.", file_type)
+    output_path = string(file_path[1:ind], "_processed", file_type)
     return output_path
 end
 
