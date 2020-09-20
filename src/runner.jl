@@ -41,7 +41,7 @@ function main()
         args["target"]
     )
     output_path = MolecBio.make_output_path(args["file_path"])
-    MolecBio.save_table_to_csv(ddct_table, output_path)
+    MolecBio.save_table(ddct_table, output_path)
 end
 
 main()
