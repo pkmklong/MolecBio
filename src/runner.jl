@@ -44,7 +44,7 @@ function main()
         args["target"]
     )
     output_path = MolecBio.make_output_path(args["file_path"])
-    @info "Saving output table to "
+    @info "Saving output table to " output_path
     MolecBio.save_table(ddct_table, output_path)
 end
 
