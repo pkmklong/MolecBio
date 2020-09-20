@@ -46,7 +46,7 @@ end
 
 function plot_fold_change(df:: DataFrame, output_path:: String)  
     p = plot(df,  x="group", y="fold_change", Geom.boxplot)
-    img = SVG(output_path, 6inch, 4inch)
+    img = SVG(output_path, 5inch, 4inch)
     draw(img, p)
 end 
 
