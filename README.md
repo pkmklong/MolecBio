@@ -55,6 +55,6 @@ Parsed args:
 │    │ 4   │ control │ 25.4    │ 17.7    │ -7.7     │ 0.8665         │ 1.82323     │
 └    │ 5   │ control │ 25.45   │ 17.2    │ -8.25    │ 0.3165         │ 1.24531     │
 ┌ Info: Saving output table to 
-└   output_path = "data/demo_data_processed"
+└   output_path = "data/demo_data_processed.csv"
 
 ```
