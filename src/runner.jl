@@ -44,9 +44,14 @@ function main()
         args["target"]
     )
     @info "Computing fold change with delta delta ct" first(ddct_table, 5)
-    output_path = MolecBio.make_output_path(args["file_path"], ".csv")
-    @info "Saving output table to " output_path
-    MolecBio.save_table(ddct_table, output_path)
+    
+    ddct_table_path = MolecBio.make_output_path(args["file_path"], ".csv")
+    @info "Saving output table to " ddct_table_path
+    MolecBio.save_table(ddct_table, ddct_table_path)
+    
+    ddct_figure_path = MolecBio.make_output_path(args["file_path"], ".csv")
+    @info "Saving output figure to " ddct_figure_path
+    MolecBio.plot_fold_change(ddct_table, ddct_figure_path)
 end
 
 main()
