@@ -33,9 +33,18 @@ function main()
     for (arg,val) in args
         println("  $arg  =>  $val")
     end
-    raw_table = MolecBio.load_table(args.file_path)
-    ddct_table = MolecBio.calculate_ddct(raw_table, args.control, args.target, args.normalizer)
-    output_path = MolecBio.make_output_path(args.file_path)
+    raw_table = MolecBio.load_table(
+        get(args, "file_path", nothing)
+    )
+    ddct_table = MolecBio.calculate_ddct(
+        raw_table, 
+        get(args, "control", nothing), 
+        get(args, "normalizer", nothing),
+        get(args, "target", nothing)
+        )
+    output_path = MolecBio.make_output_path(
+        get(args, "file_path", nothing)
+        )
     MolecBio.save_table_to_csv(ddct_table, output_path)
 end
 
