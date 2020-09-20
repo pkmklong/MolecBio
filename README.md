@@ -1,12 +1,14 @@
 # MolecBio
 WIP: Julia utility for relative gene expression
 
+<b>Installation</b>
 ```julia
 using Pkg
 
 pkg"add https://github.com/pkmklong/Gems.jl"
 ```
 
+<b>Entry point</b>
 ```julia
 julia runner.jl --h
 usage: runner.jl -f FILE_PATH -c CONTROL -t TARGET -n NORMALIZER [-h]
@@ -25,7 +27,7 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
-
+</b>Demo</b>
 ```julia
 julia runner.jl -f data/demo_data.csv -c "control" -t "egf1r" -n "rpl19" 
 ```
