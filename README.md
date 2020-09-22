@@ -81,3 +81,4 @@ TODO:
 * add a normality test
 * generate outputs expressed as % change and run two-sided t-test
 * generate outputs expressed as % change and run nonparametric two sample test
+* add yaml based entrypoint
