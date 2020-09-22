@@ -82,3 +82,5 @@ TODO:
 * generate outputs expressed as % change and run two-sided t-test
 * generate outputs expressed as % change and run nonparametric two sample test
 * add yaml based entrypoint
+* unit tests and code coverage
+* circleci for CI
