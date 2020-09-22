@@ -73,3 +73,11 @@ Parsed args:
 <b>Visuals</b>
 
 <img src="https://github.com/pkmklong/molecbio/blob/master/images/demo_data_processed.svg" height="400"  class="center" title="Demo visualization">
+
+
+TODO: 
+* add feature to flag normalizer gene outliers (> 2 SD from mean) in ddct table
+* produce visuals +/- outliers
+* add a normality test
+* generate outputs expressed as % change and run two-sided t-test
+* generate outputs expressed as % change and run nonparametric two sample test
