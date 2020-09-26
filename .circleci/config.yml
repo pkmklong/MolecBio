@@ -4,8 +4,7 @@ defaults: &defaults
   docker:
     - image: julia:1.1
   working_directory: ~/project
-  
-  
+    
 jobs:
   build:
     <<: *defaults
@@ -14,9 +13,27 @@ jobs:
           name: Install MolecBio
           command: |
               julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
+        - save_cache:
+             key: "setup_deps"
+             paths: 
+                - ~/.julia/
+                
+  demo:          
+      <<: *defaults
+      steps:
+        - checkout  # checkout source code to working directory
+        - restore_cache:
+             keys:
+               - "setup_deps"
+        - run:
+            command: |
               pwd
               ls
+  
 workflows:
   integration:
     jobs:
-      - build
+      - build   
+      - demo:
+          requires:
+              - build
