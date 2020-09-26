@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://molecbio.readthedocs.io/en/latest/) Check out the [MolecBio documentation on ReadTheDocs](https://molecbio.readthedocs.io/en/latest/).
+[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://molecbio.readthedocs.io/en/latest/) Check out the [MolecBio documentation on ReadTheDocs](https://molecbio.readthedocs.io/en/latest/).<br>
 [![<ORG_NAME>](https://circleci.com/gh/pkmklong/MolecBio.svg?style=shield)](https://github.com/pkmklong/MolecBio/blob/master/.circleci/config.yml)
 
 # MolecBio (WIP)
