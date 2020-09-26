@@ -8,7 +8,7 @@ jobs:
     steps:
       - run:
           name: Install MolecBio
-          command: julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";'
+          command: julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' pwd; ls
 workflows:
   integration:
     jobs:
