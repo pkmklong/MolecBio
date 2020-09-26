@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Install MolecBio
           command: |
-              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git"; Pkg.add("ArgParse")'  
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'  
       - run:
           name: Install git
           command: |
