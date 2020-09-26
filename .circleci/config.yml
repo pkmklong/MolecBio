@@ -13,26 +13,27 @@ jobs:
           name: Install MolecBio
           command: |
               julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
-      - save_cache:
-          key: "install_deps_3"
-          paths: 
-              - ~/.julia/*
-              - ~/.julia/registries/General
-                
-  demo:          
-      <<: *defaults
-      steps:
-        - checkout  # checkout source code to working directory
-        - restore_cache:
-             keys:
-               - "install_deps_3"
-        - run:
-            command: julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
+              julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
+#     - save_cache:
+#         key: "install_deps_3"
+#         paths: 
+#             - ~/.julia/*
+#             - ~/.julia/registries/General
+#               
+# demo:          
+#     <<: *defaults
+#     steps:
+#       - checkout  # checkout source code to working directory
+#       - restore_cache:
+#            keys:
+#              - "install_deps_3"
+#       - run:
+#           command: julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
   
 workflows:
   integration:
     jobs:
       - build   
-      - demo:
-          requires:
-              - build
+#   - demo:
+#       requires:
+#           - build
