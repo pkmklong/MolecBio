@@ -12,11 +12,22 @@ jobs:
       - run:
           name: Install MolecBio
           command: |
-              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";'
-              apk update
-              apk add git
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";'          
+      - run:
+          name: Install git
+          command: |
+              apt-get update && \
+              apt-get upgrade -y && \
+              apt-get install -y git
+      - run:
+          name: clone MolecBio
+          command: |                         
               git clone https://github.com/pkmklong/MolecBio.git
-              julia ~/.julia/registries/General/MolecBio/src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
+      - run:
+          name: run demo
+          command: |    
+              julia ~/.julia/registries/General/MolecBio/src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19"             
+              
 #     - save_cache:
 #         key: "install_deps_3"
 #         paths: 
