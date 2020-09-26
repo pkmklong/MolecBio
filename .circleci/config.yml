@@ -13,10 +13,10 @@ jobs:
           name: Install MolecBio
           command: |
               julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
-        - save_cache:
-             key: "setup_deps"
-             paths: 
-                - ~/.julia/
+      - save_cache:
+          key: "setup_deps"
+          paths: 
+              - ~/.julia/
                 
   demo:          
       <<: *defaults
