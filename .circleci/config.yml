@@ -13,7 +13,7 @@ jobs:
           name: Install MolecBio
           command: |
               julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
-              pwd; ls
+              ls
               julia MolecBio/src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
 #     - save_cache:
 #         key: "install_deps_3"
