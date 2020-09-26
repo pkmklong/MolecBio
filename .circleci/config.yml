@@ -14,9 +14,10 @@ jobs:
           command: |
               julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
       - save_cache:
-          key: "install_deps_2"
+          key: "install_deps_3"
           paths: 
               - ~/.julia/*
+              - ~/.julia/registries/General
                 
   demo:          
       <<: *defaults
@@ -24,7 +25,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - restore_cache:
              keys:
-               - "install_deps_2"
+               - "install_deps_3"
         - run:
             command: julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
   
