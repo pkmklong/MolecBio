@@ -26,9 +26,7 @@ jobs:
              keys:
                - "setup_deps"
         - run:
-            command: |
-              pwd
-              ls
+            command: julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
   
 workflows:
   integration:
