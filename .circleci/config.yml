@@ -1,14 +1,21 @@
 # .circleci/config.yml
 version: 2.1
-
+defaults: &defaults
+  docker:
+    - image: julia:1.1
+  working_directory: ~/project
+  
+  
 jobs:
   build:
-    docker:
-      - image: julia:1.1
+    <<: *defaults
     steps:
       - run:
           name: Install MolecBio
-          command: julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' pwd; ls
+          command: |
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.git";' 
+              pwd
+              ls
 workflows:
   integration:
     jobs:
