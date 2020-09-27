@@ -4,6 +4,8 @@ defaults: &defaults
   docker:
     - image: julia:1.1
   working_directory: ~/project
+  environment:
+    BASH_ENV: "~/.bashrc"
     
 jobs:
   build:
@@ -12,7 +14,11 @@ jobs:
       - run:
           name: Install MolecBio
           command: |
-              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'  
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'
+      - run:
+          name: check path
+          command: |  
+              julia -e  'LOAD_PATH; Base.load_path();'
       - run:
           name: Install git
           command: |
@@ -33,6 +39,7 @@ jobs:
 #         paths: 
 #             - ~/.julia/*
 #             - ~/.julia/registries/General
+#             - /root/.bashrc
 #               
 # demo:          
 #     <<: *defaults
