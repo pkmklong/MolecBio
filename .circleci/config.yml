@@ -18,7 +18,7 @@ jobs:
       - run:
           name: check path
           command: |  
-              julia -e  'Base.load_path(); println(Base.load_path());'
+              julia -e  'println(JULIA_LOAD_PATH); println(Base.load_path());'
       - run:
           name: Install git
           command: |
