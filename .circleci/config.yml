@@ -5,7 +5,9 @@ defaults: &defaults
     - image: julia:1.5
   working_directory: ~/project
   environment:
-    BASH_ENV: "~/.bashrc"
+    BASH_ENV: "~/.bashrc" 
+    JULIA_DEPOT_PATH: "~/.julia"
+    JULIA_PKGDIR: "~/.julia"
     
 jobs:
   build:
@@ -19,7 +21,6 @@ jobs:
           name: check path
           command: |  
               julia -e  'println(LOAD_PATH); println(Base.load_path()); push!(LOAD_PATH, "~/.julia/environments/v1.1/Project.toml"); push!(LOAD_PATH, "~/.julia-1.5.app/Contents/Resources/julia/share/julia/stdlib/v1.5")'
-              export JULIA_DEPOT_PATH=~/.julia/
       - run:
           name: Install git
           command: |
