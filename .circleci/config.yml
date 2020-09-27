@@ -16,11 +16,7 @@ jobs:
       - run:
           name: Install MolecBio
           command: |
-              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'
-#      - run:
-#          name: check path
-#          command: |  
-#              julia -e  'println(LOAD_PATH); println(Base.load_path()); push!(LOAD_PATH, "~/.julia/environments/v1.5/Project.toml"); push!(LOAD_PATH, "~/.julia/stdlib/v1.5")'
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio"; using MolecBio'
       - run:
           name: Install git
           command: |
