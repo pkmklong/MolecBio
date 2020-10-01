@@ -60,17 +60,22 @@ end
 function plot_fold_change(df:: DataFrame, 
         normalizer:: String, 
         output_path:: String)  
-    expression = plot(
+    fold = plot(
         df, x="group", y="fold_change", 
         Geom.boxplot,
         Guide.title("Fold Change in Target Expression")
+    )
+    expression = plot(
+        df, x="group", y="percent_expression", 
+        Geom.boxplot,
+        Guide.title("Percent Change in Target Expression")
     )
     normalizer = plot(
         df, x="group", y=normalizer, 
         Geom.boxplot,
         Guide.title("Raw CT $normalizer")
     )
-    p = hstack(expression,normalizer)
+    p = hstack(fold, expression, normalizer)
     img = SVG(output_path, 5inch, 4inch)
     draw(img, p)
 end 
