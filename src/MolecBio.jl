@@ -10,8 +10,7 @@ molecbio = MolecBio
 export molecbio
 
 
-function make_output_path(file_path:: String, file_type:: String)
-    
+function make_output_path(file_path:: String, file_type:: String)   
     ind = findlast(isequal('.'), file_path) -1 
     output_path = string(file_path[1:ind], "_processed", file_type)
     return output_path
@@ -36,6 +35,15 @@ function calculate_ddct(df:: DataFrame,
     
     f = (x) -> 2^(-x)
     df[Symbol("fold_change")] = f.(-df.delta_delta_ct)
+
+    return df
+end
+
+
+function calculate_percent_expression(df:: DataFrame)     
+    df[Symbol("expression")] = f.(-df.delta_ct)
+    df[Symbol("average_expression")] = mean(df[df[:group] .== control,:expression])
+    df[Symbol("percent_expression")] = f.(-df.delta_ct)
     return df
 end
 
@@ -43,6 +51,7 @@ end
 function save_table(df:: DataFrame, output_path:: String)
     CSV.write(output_path, df)
 end
+
 
 function plot_fold_change(df:: DataFrame, 
         normalizer:: String, 
@@ -62,4 +71,4 @@ function plot_fold_change(df:: DataFrame,
     draw(img, p)
 end 
 
-end
+end # module
