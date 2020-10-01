@@ -2,6 +2,8 @@ using ArgParse
 using MolecBio
 using DataFrames
 
+#using HypothesisTests
+
 
 function parse_commandline()
     s = ArgParseSettings()
