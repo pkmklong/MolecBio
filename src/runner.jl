@@ -45,7 +45,7 @@ function main()
     )
     @info "Computing fold change with delta delta ct " first(ddct_table, 5)
     
-    ddct_table = MolecBio.calculate_percent_expression(ddct_table)
+    ddct_table = MolecBio.calculate_percent_expression(ddct_table, args["control"])
     @info "Computing percent expression " first(ddct_table, 5)
  
     ddct_table_path = MolecBio.make_output_path(args["file_path"], ".csv")
