@@ -41,12 +41,12 @@ end
 
 
 
-function calculate_percent_expression(df:: DataFrame)     
-    df[Symbol("expression")] = f.(-df.delta_ct)
-    df[Symbol("average_expression")] = mean(df[df[:group] .== control,:expression])
+function calculate_percent_expression(df:: DataFrame)
     
     f = (x) -> 2^(-x)
-    df[Symbol("percent_expression")] = f.(-df.delta_ct)
+    df[Symbol("expression")] = f.(-df.delta_ct)
+    df[Symbol("average_expression")] = mean(df[df[:group] .== control,:expression])
+    df[Symbol("percent_expression")] = df.expression ./ df.average_expression
     return df
 end
 
