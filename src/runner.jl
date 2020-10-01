@@ -46,7 +46,7 @@ function main()
         args["target"]
     )    
     ddct_table = MolecBio.calculate_percent_expression(ddct_table, args["control"])
-    @info "Computing fold change " show(ddct_table, allcols = true))
+    @info "Computing fold change " show(ddct_table, allcols = true)
  
     ddct_table_path = MolecBio.make_output_path(args["file_path"], ".csv")
     @info "Saving output table to " ddct_table_path
