@@ -59,18 +59,21 @@ function plot_fold_change(df:: DataFrame,
         normalizer:: String, 
         output_path:: String)  
     fold = plot(
-        df, x="group", y="fold_change", 
+        df, x=:group, y=:fold_change, 
         Geom.boxplot,
-        Guide.title("Fold Change in Target Expression")
+        color=:group,
+        Guide.title("Fold Change")
     )
     expression = plot(
-        df, x="group", y="percent_expression", 
+        df, x=:group, y=:percent_expression, 
         Geom.boxplot,
-        Guide.title("Percent Change in Target Expression")
+        color=:group,
+        Guide.title("Percent Change")
     )
     normalizer = plot(
-        df, x="group", y=normalizer, 
+        df, x=:group, y=normalizer, 
         Geom.boxplot,
+        color=:group,
         Guide.title("Raw CT $normalizer")
     )
     p = hstack(fold, expression, normalizer)
