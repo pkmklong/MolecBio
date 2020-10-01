@@ -74,7 +74,7 @@ function plot_fold_change(df:: DataFrame,
         Guide.title("Raw CT $normalizer")
     )
     p = hstack(fold, expression, normalizer)
-    img = SVG(output_path, 5inch, 4inch)
+    img = SVG(output_path, 6inch, 4inch)
     draw(img, p)
 end 
 
