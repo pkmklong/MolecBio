@@ -41,7 +41,8 @@ end
 
 
 
-function calculate_percent_expression(df:: DataFrame)
+function calculate_percent_expression(df:: DataFrame,
+        control:: String,)
     
     f = (x) -> 2^(-x)
     df[Symbol("expression")] = f.(-df.delta_ct)
