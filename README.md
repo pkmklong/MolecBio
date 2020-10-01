@@ -52,23 +52,23 @@ Parsed args:
   file_path  =>  data/demo_data.csv
 ┌ Info: Loading CT values table
 └   args["file_path"] = "data/demo_data.csv"
-┌ Info: Computing fold change with delta delta ct
+┌ Info: Computing fold change 
 │   first(ddct_table, 5) =
-│    5×6 DataFrame
-│    │ Row │ group   │ egf1r   │ rpl19   │ delta_ct │ delta_delta_ct │ fold_change │
-│    │     │ String  │ Float64 │ Float64 │ Float64  │ Float64        │ Float64     │
-│    ├─────┼─────────┼─────────┼─────────┼──────────┼────────────────┼─────────────┤
-│    │ 1   │ control │ 25.6    │ 17.5    │ -8.1     │ 0.4665         │ 1.38175     │
-│    │ 2   │ control │ 25.8    │ 16.9    │ -8.9     │ -0.3335        │ 0.793609    │
-│    │ 3   │ control │ 26.0    │ 17.4    │ -8.6     │ -0.0335        │ 0.977047    │
-│    │ 4   │ control │ 25.4    │ 17.7    │ -7.7     │ 0.8665         │ 1.82323     │
-└    │ 5   │ control │ 25.45   │ 17.2    │ -8.25    │ 0.3165         │ 1.24531     │
+│    5×9 DataFrame. Omitted printing of 2 columns
+│    │ Row │ group   │ egf1r   │ rpl19   │ delta_ct │ delta_delta_ct │ fold_change │ expression │
+│    │     │ String  │ Float64 │ Float64 │ Float64  │ Float64        │ Float64     │ Float64    │
+│    ├─────┼─────────┼─────────┼─────────┼──────────┼────────────────┼─────────────┼────────────┤
+│    │ 1   │ control │ 25.6    │ 17.5    │ -8.1     │ 0.4665         │ 1.38175     │ 0.00364466 │
+│    │ 2   │ control │ 25.8    │ 16.9    │ -8.9     │ -0.3335        │ 0.793609    │ 0.00209331 │
+│    │ 3   │ control │ 26.0    │ 17.4    │ -8.6     │ -0.0335        │ 0.977047    │ 0.00257716 │
+│    │ 4   │ control │ 25.4    │ 17.7    │ -7.7     │ 0.8665         │ 1.82323     │ 0.00480916 │
+└    │ 5   │ control │ 25.45   │ 17.2    │ -8.25    │ 0.3165         │ 1.24531     │ 0.00328475 │
 ┌ Info: Saving output table to 
 └   ddct_table_path = "data/demo_data_processed.csv"
 ┌ Info: Saving output figure to 
 └   ddct_figure_path = "data/demo_data_processed.svg"
-
 ```
+
 <b>Visuals</b>
 
 <img src="https://github.com/pkmklong/molecbio/blob/master/images/demo_data_processed.svg" height="400"  class="center" title="Demo visualization">
