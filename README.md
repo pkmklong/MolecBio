@@ -6,10 +6,8 @@ A simple Julia utility to automate delta delta ct [relative quantification of mR
 
 
 <b>Installation</b>
-```julia
-using Pkg
-
-pkg"add https://github.com/pkmklong/MolecBio.git"
+```
+$ julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio"; using MolecBio;'
 ```
 
 <b>Entry point</b>
