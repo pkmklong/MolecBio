@@ -30,7 +30,7 @@ jobs:
       - run:
           name: run demo
           command: |  
-              julia MolecBio/src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19"             
+              julia MolecBio/src/runner.jl -f "MolecBio/data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19"             
               
 #     - save_cache:
 #         key: "install_deps_3"
