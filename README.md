@@ -78,7 +78,8 @@ TODO:
 * add feature to flag normalizer gene outliers (> 2 SD from mean) in ddct table
 * produce visuals +/- outliers
 * add a normality test
-* generate outputs expressed as % change and run two-sided t-test
+* <s>generate outputs expressed as % change</s>
+* add two-sided t-test (eq variance)
 * generate outputs expressed as % change and run nonparametric two sample test
 * add yaml based entrypoint
 * unit tests and code coverage
