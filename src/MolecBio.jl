@@ -56,27 +56,39 @@ end
 
 
 function plot_fold_change(df:: DataFrame, 
-        normalizer:: String, 
+        normalizer:: String,
+        target:: String,
         output_path:: String)  
     fold = plot(
         df, x=:group, y=:fold_change, 
         Geom.boxplot,
         color=:group,
-        Guide.title("Fold Change")
+        Guide.title("Fold Change"),
+        Guide.xticks(orientation=:vertical)
     )
     expression = plot(
         df, x=:group, y=:percent_expression, 
         Geom.boxplot,
         color=:group,
-        Guide.title("Percent Change")
+        Guide.title("Percent Change"),
+        Guide.xticks(orientation=:vertical)
+    )
+    target = plot(
+        df, x=:group, y=target, 
+        Geom.boxplot,
+        color=:group,
+        Guide.title("Raw CT $target"),
+        Guide.xticks(orientation=:vertical)
     )
     normalizer = plot(
         df, x=:group, y=normalizer, 
         Geom.boxplot,
         color=:group,
-        Guide.title("Raw CT $normalizer")
+        Guide.title("Raw CT $normalizer"),
+        Guide.xticks(orientation=:vertical)
     )
-    p = hstack(fold, expression, normalizer)
+    #p = hstack(fold, expression, target, normalizer)
+    p = gridstack([fold, expression; target, normalizer])
     img = SVG(output_path, 6inch, 4inch)
     draw(img, p)
 end 
