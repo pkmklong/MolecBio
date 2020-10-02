@@ -89,7 +89,7 @@ function plot_fold_change(df:: DataFrame,
     )
     #p = hstack(fold, expression, target, normalizer)
     p = gridstack([fold expression; target normalizer])
-    img = SVG(output_path, 6inch, 6inch)
+    img = SVG(output_path, 8inch, 6inch)
     draw(img, p)
 end 
 
