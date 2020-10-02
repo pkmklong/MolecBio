@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Install MolecBio
           command: |
-              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio"; using MolecBio; Pkg.add("ArgParse"); Pkg.add("DataFrames"); Pkg.add("Statistics"); Pkg.add("Gadfly"); Pkg.add("CSV"); '
+              julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio"; Pkg.add("ArgParse"); Pkg.add("DataFrames"); Pkg.add("Statistics"); Pkg.add("Gadfly"); Pkg.add("CSV"); '
       - run:
           name: Install git
           command: |
