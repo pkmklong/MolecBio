@@ -10,7 +10,7 @@ A simple Julia utility to automate relative quantification of mRNA from thermocy
 
 Installation::
 
-   $ julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio"; using MolecBio;'
+   $ julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'
     
     
 Entry point::
