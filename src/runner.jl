@@ -56,7 +56,7 @@ function main()
     @info "Saving output figure to " ddct_figure_path
     MolecBio.plot_fold_change(
         ddct_table,
-        args["normalizer"], 
+        args["target"], 
         args["normalizer"], 
         ddct_figure_path)
 end
