@@ -26,7 +26,7 @@ jobs:
       - run:
           name: clone MolecBio
           command: |                         
-              git clone https://github.com/pkmklong/MolecBio.jl.git
+              git clone https://github.com/pkmklong/MolecBio.git
       - run:
           name: run demo
           command: |  
