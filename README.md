@@ -1,5 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://molecbio.readthedocs.io/en/latest/) Check out the [MolecBio documentation on ReadTheDocs](https://molecbio.readthedocs.io/en/latest/).<br>
-[![<ORG_NAME>](https://circleci.com/gh/pkmklong/MolecBio.jl.svg?style=shield)](https://github.com/pkmklong/MolecBio.jl/blob/master/.circleci/config.yml)
+[![<ORG_NAME>](https://circleci.com/gh/pkmklong/MolecBio.svg?style=shield)](https://github.com/pkmklong/MolecBio/blob/master/.circleci/config.yml)
 
 # MolecBio (WIP)
 A simple Julia utility to automate delta delta ct [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. Assumes perfect amplification efficiency and unpaired samples.
@@ -7,7 +7,7 @@ A simple Julia utility to automate delta delta ct [relative quantification of mR
 
 <b>Installation</b>
 ```
-$ julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio.jl";'
+$ julia -e  'using Pkg; pkg"add https://github.com/pkmklong/MolecBio";'
 ```
 
 <b>Entry point</b>
