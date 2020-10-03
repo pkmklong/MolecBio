@@ -49,7 +49,7 @@ Fold change:
   
 Demo::
 
-      $ julia src/runner.jl -f "data/demo_data.csv" -t "egf1r" -n "rpl19" 
+      $ julia src/runner.jl -f "data/demo_data.csv" -c "control" -t "egf1r" -n "rpl19" 
       Parsed args:
         normalizer  =>  rpl19
         target  =>  egf1r
