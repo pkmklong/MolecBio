@@ -63,14 +63,14 @@ function plot_fold_change(df:: DataFrame,
         df, x=:group, y=:fold_change, 
         Geom.boxplot,
         color=:group,
-        Guide.title("Fold Change"),
+        Guide.title("Fold Change $target"),
         Guide.xticks(orientation=:vertical)
     )
     expression = plot(
         df, x=:group, y=:percent_expression, 
         Geom.boxplot,
         color=:group,
-        Guide.title("Percent Change"),
+        Guide.title("Percent Change $target"),
         Guide.xticks(orientation=:vertical)
     )
     target = plot(
