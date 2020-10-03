@@ -83,4 +83,4 @@ TODO:
 * generate outputs expressed as % change and run nonparametric two sample test
 * add yaml based entrypoint
 * unit tests and code coverage
-* circleci for CI
+* <s>circleci for CI</s>
