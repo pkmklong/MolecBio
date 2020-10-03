@@ -71,7 +71,7 @@ Parsed args:
 
 <b>Visuals</b>
 
-<img src="https://github.com/pkmklong/molecbio/blob/master/images/demo_data_processed.svg" height="600"  class="center" title="Demo visualization">
+<img src="https://github.com/pkmklong/molecbio/blob/master/images/demo_data_processed.svg" height="800"  class="center" title="Demo visualization">
 
 
 TODO: 
