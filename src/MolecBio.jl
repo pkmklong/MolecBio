@@ -56,8 +56,8 @@ end
 
 
 function plot_fold_change(df:: DataFrame, 
-        normalizer:: String,
         target:: String,
+        normalizer:: String,
         output_path:: String)  
     fold = plot(
         df, x=:group, y=:fold_change, 
