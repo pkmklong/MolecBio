@@ -2,7 +2,7 @@
 [![<ORG_NAME>](https://circleci.com/gh/pkmklong/MolecBio.svg?style=shield)](https://github.com/pkmklong/MolecBio/blob/master/.circleci/config.yml)
 
 # MolecBio (WIP)
-A simple Julia utility to automate delta delta ct [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. Assumes perfect amplification efficiency and unpaired samples.
+A simple constrained-scope Julia utility to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler cycle threshold (ct) data. Takes as input raw ct values for target and reference genes from experiment and control conditions and returns as output the fold changes in gene expression using the delta delta ct method. Assumes perfect amplification efficiency and unpaired samples. Useful automation for repeatitive QPCR analyses for life science grad students and postdocs. 
 
 
 <b>Installation</b>
