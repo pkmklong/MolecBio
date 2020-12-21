@@ -44,7 +44,9 @@ function main()
         args["control"], 
         args["normalizer"],
         args["target"]
-    )    
+    )
+    @info "Computing delta delta ct " first(ddct_table, 5)
+    
     ddct_table = MolecBio.calculate_percent_expression(ddct_table, args["control"])
     @info "Computing fold change " first(ddct_table, 5)
  
