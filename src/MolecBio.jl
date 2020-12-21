@@ -28,13 +28,13 @@ function calculate_ddct(df:: DataFrame,
         target:: String,
         normalizer:: String)  
     
-    df[!, Symbol("delta_ct")] = df[!, Symbol(target)] .- df[!, Symbol(normalizer)]
+    df[Symbol("delta_ct")] = df[Symbol(target)] .- df[Symbol(normalizer)]
     
     avg_delta_ct_control = mean(df[df[!, :group] .== control,:delta_ct])
-    df[!, Symbol("delta_delta_ct")] = df.delta_ct .- avg_delta_ct_control   
+    df[Symbol("delta_delta_ct")] = df.delta_ct .- avg_delta_ct_control   
     
     f = (x) -> 2^(-x)
-    df[!, Symbol("fold_change")] = f.(-df.delta_delta_ct)
+    df[Symbol("fold_change")] = f.(-df.delta_delta_ct)
 
     return df
 end
@@ -43,9 +43,9 @@ end
 function calculate_percent_expression(df:: DataFrame, control:: String)
     
     f = (x) -> 2^(-x)
-    df[!,Symbol("expression")] = f.(-df.delta_ct)
-    df[!,Symbol("average_expression")] = mean(df[df[!, :group] .== control,:expression])
-    df[!,Symbol("percent_expression")] = (df.expression ./ df.average_expression) .* 100
+    df[Symbol("expression")] = f.(-df.delta_ct)
+    df[Symbol("average_expression")] = mean(df[df[!, :group] .== control,:expression])
+    df[Symbol("percent_expression")] = (df.expression ./ df.average_expression) .* 100
     return df
 end
 
