@@ -24,7 +24,7 @@ end
 
 
 """
-   calculate_ddct(df, control, target, normalizer)
+    calculate_ddct(df, control, target, normalizer)
  
 Returns delta delta ct values for target gene
 """
