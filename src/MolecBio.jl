@@ -8,7 +8,7 @@ using Gadfly
 
 molecbio = MolecBio
 export molecbio
-export calculate_ddct
+
 
 function make_output_path(file_path:: String, file_type:: String)   
     ind = findlast(isequal('.'), file_path) -1 
@@ -24,9 +24,9 @@ end
 
 
 """
-     calculate_ddct(df, control, target, normalizer)
-
-Returns delta delta ct values for target gene
+    calculate_ddct(df, control, target, normalizer)
+ 
+Return the delta delta ct values for target gene
 """
 function calculate_ddct(df:: DataFrame, 
         control:: String,
@@ -45,6 +45,11 @@ function calculate_ddct(df:: DataFrame,
 end
 
 
+"""
+    calculate_percent_expression(df, control)
+ 
+Return the percent change in gene expression relative to the average control
+"""
 function calculate_percent_expression(df:: DataFrame, control:: String)
     
     f = (x) -> 2^(-x)
