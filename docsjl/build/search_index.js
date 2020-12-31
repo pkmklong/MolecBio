@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"#MolecBio.jl-Documentation","page":"MolecBio.jl Documentation","title":"MolecBio.jl Documentation","text":"","category":"section"},{"location":"","page":"MolecBio.jl Documentation","title":"MolecBio.jl Documentation","text":"Modules = [MolecBio]\nOrder   = [:function]","category":"page"},{"location":"#MolecBio.calculate_ddct-Tuple{DataFrames.DataFrame,String,String,String}","page":"MolecBio.jl Documentation","title":"MolecBio.calculate_ddct","text":" calculate_ddct(df, control, target, normalizer)\n\nReturns delta delta ct values for target gene\n\n\n\n\n\n","category":"method"}]
+}
