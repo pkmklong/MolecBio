@@ -8,7 +8,7 @@ using Gadfly
 
 molecbio = MolecBio
 export molecbio
-export func
+export calculate_ddct
 
 
 function make_output_path(file_path:: String, file_type:: String)   
