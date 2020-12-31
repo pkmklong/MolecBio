@@ -23,6 +23,11 @@ function load_table(file_path:: String)
 end
 
 
+"""
+   calculate_ddct(df, control, target, normalizer)
+ 
+Returns delta delta ct values for target gene
+"""
 function calculate_ddct(df:: DataFrame, 
         control:: String,
         target:: String,
